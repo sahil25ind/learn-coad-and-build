@@ -1,0 +1,6 @@
+all  C  projects files will be stored here.
+
+sorce code  &  .exe apps
+
+
+programming in  C

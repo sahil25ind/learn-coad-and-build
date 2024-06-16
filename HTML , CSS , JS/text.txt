@@ -1,2 +1,4 @@
-this folder will store all the projest i will work in th feature from small & simple project to bigger and complex projects.
-all will be stored here.
+this folder will store all the HTML projest i will work in th feature from small & simple project to bigger & complex projects.
+all the projects will be stored here.
+
+HTML  &  CSS  &  JS

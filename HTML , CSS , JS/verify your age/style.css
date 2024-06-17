@@ -1,0 +1,47 @@
+#h1{
+font-family:arial;
+font-size:3em;
+}
+#lbl{
+font-family:arial;
+font-size:1.3em;
+font-weight: bold;
+cursor:pointer;
+}
+#txt{
+font-family:arial;
+border: 2px solid;
+font-size:1.3em;
+
+}
+.btn{
+font-family:arial;
+font-weight: bold;
+cursor:pointer;
+font-size:1.4em;
+padding:5px 20px;
+margin:6px;
+border-radius:9px;
+
+}
+#box{width: 310px;
+height: auto;
+text-align:center;
+padding: 20px;
+margin:50px 110px;
+}
+.dis{
+font-family:arial;
+font-size:2.5em;
+}
+.btn:hover{
+background-color:red;
+transform: translate(-1.5px, -1.5px);
+box-shadow:1.5px 1.5px 3px;
+
+}
+.btn:active{
+transform: translate(1.5px, 1.5px);
+box-shadow:none;
+
+}

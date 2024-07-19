@@ -5,7 +5,7 @@
 
 int main(){
     srand(time(0));
-    int sec_num=rand()%99+1;
+    int sec_num=rand()%99+1; //its not practical dont use this every where use this  sec_num = (rand()%((max-min)+1)+min); 
     int guess;
     int guess_count;
 

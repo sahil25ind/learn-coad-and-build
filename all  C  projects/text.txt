@@ -1,6 +1,0 @@
-all  C  projects files will be stored here.
-
-sorce code of all the project i will build
-
-
-programming in  C

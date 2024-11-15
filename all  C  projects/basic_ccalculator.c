@@ -32,6 +32,8 @@ start:
         answer=num1/num2;
         printf("\nresult: %.2lf \n",answer);
         break;
+        default:
+        printf("\nInvalid input!\n");
     }
     goto start;
 

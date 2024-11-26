@@ -6,7 +6,7 @@ public class audioPlayerOnTerminal{
 	public static void main(String[] args)throws Exception {
 		Scanner scanner = new Scanner(System.in);
 		File audioFile = new File("i like the way you kiss me.wav");
-		System.out.println(audioFile.getAbsolutePath());
+	//	System.out.println(audioFile.getAbsolutePath());
 		AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 		Clip audioClip = AudioSystem.getClip();
 		audioClip.open(audioStream);

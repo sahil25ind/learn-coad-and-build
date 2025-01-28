@@ -1,0 +1,22 @@
+{
+    "manager": {
+        "name": "patric",
+        "age": 23,
+        "number": "9854628725"
+    },
+    "cook": {
+        "name": "peter parker",
+        "age": 28,
+        "number": "1234567859"
+    },
+    "casher": {
+        "name": "jack",
+        "age": 25,
+        "number": "6842397152"
+    },
+    "owner": {
+        "name": "mikel",
+        "age": 29,
+        "number": "6547891253"
+    }
+}

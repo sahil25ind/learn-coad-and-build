@@ -1,0 +1,236 @@
+#include <iostream>
+#include <iomanip>
+
+int main(){
+    //making quize game questions will be from C++ only and 100 of them
+    int qSize = 83;                    //got these from chat GPT
+    int correctAns = 0;                 //keep track of correct answers
+    std::string guesses;                //taking the user input in string not in char
+    std::string questions[qSize] = {    //array of questions
+        "1. What is the correct syntax of C++ main function?",
+        "2. Which of the following is used to declare a constant in C++?",
+        "3. What will be the output of 'cout << 5 / 2;'?",
+        "4. Which operator is used to allocate memory dynamically in C++?",
+        "5. Which of the following is not a valid C++ data type?",
+        "6. What is the size of 'int' in C++ (typically on a 32-bit system)?",
+        "7. Which feature allows a function to be defined with the same name but different parameters?",
+        "8. Which of the following is used to define a class in C++?",
+        "9. What does 'public' keyword specify in a class definition?",
+        "10. Which access specifier allows members to be accessed only within the same class and derived classes?",
+        "11. Which of the following is used to release dynamically allocated memory?",
+        "12. What is the keyword used to inherit a class in C++?",
+        "13. Which operator is used to access members of a structure?",
+        "14. Which function is called automatically when an object is created?",
+        "15. What is the default return type of main() in C++?",
+        "16. Which of the following is not a valid looping construct in C++?",
+        "17. Which of these operators has the highest precedence?",
+        "18. Which standard library in C++ provides functionalities for input and output?",
+        "19. What will be the output of 'cout << (5 > 2 ? 10 : 20);'?",
+        "20. Which header file should be included for using 'std::vector'?",
+        "21. Which keyword is used to define a template in C++?",
+        "22. Which of these is not a valid variable name in C++?",
+        "23. Which function is used to read an entire line of input in C++?",
+        "24. What is the output of 'sizeof(double)' typically on a 64-bit system?",
+        "25. Which operator is used for dereferencing a pointer?",
+        "26. Which of these is the correct syntax for defining a constructor?",
+        "27. What is the default access specifier for members of a class?",
+        "28. Which of these can be overloaded in C++?",
+        "29. Which keyword is used to prevent a variable from being modified?",
+        "30. Which function in C++ returns the length of a string?",
+        "31. Which of the following is a correct way to declare a pointer?",
+        "32. What does the 'new' operator return in C++?",
+        "33. Which function is used to allocate memory in C?",
+        "34. Which keyword is used to return control from a function?",
+        "35. Which of the following loops is guaranteed to execute at least once?",
+        "36. Which STL container stores elements in key-value pairs?",
+        "37. Which of these is not a C++ access specifier?",
+        "38. Which function is called when an object is deleted?",
+        "39. What is function overloading?",
+        "40. Which of the following is not a valid C++ operator?",
+        "41. Which of these can be used to handle exceptions in C++?",
+        "42. Which function is used to compare two strings?",
+        "43. What is the purpose of 'friend' keyword in C++?",
+        "44. Which of the following is used to access a member function of an object?",
+        "45. Which operator is used to find the remainder of a division?",
+        "46. Which keyword is used to define a namespace?",
+        "47. Which of these is the base class for all exception classes in C++?",
+        "48. Which function is used to open a file in C++?",
+        "49. Which C++ feature allows you to write functions that operate on different data types?",
+        "50. Which function converts a string to an integer?",
+        "51. What is the purpose of the 'this' pointer in C++?",
+        "52. Which of the following is a valid type of constructor?",
+        "53. What is the output of the following code: 'cout << (1 && 0);'?",
+        "54. Which operator is used for conditional statements?",
+        "55. Which C++ feature allows the creation of classes based on other classes?",
+        "56. What is the output of 'cout << 10 % 3;'?",
+        "57. What is the keyword used to terminate a loop?",
+        "58. Which of the following is used to pause the execution of a program?",
+        "59. What is the result of 'bool b = (1 == 1);'?",
+        "60. How do you declare a multi-dimensional array in C++?",
+        "61. What is the correct way to initialize an array?",
+        "62. Which loop is best suited for iterating over arrays?",
+        "63. What will be the output of 'cout << 3.0 / 2;'?",
+        "64. Which of these is a valid destructor?",
+        "65. How can you declare a constant pointer in C++?",
+        "66. Which operator is used to check equality?",
+        "67. What is the purpose of the 'static' keyword?",
+        "68. What does the 'sizeof' operator do?",
+        "69. How do you create a reference variable?",
+        "70. What will be the output of 'cout << true + false;'?",
+        "71. Which of the following can be a template parameter?",
+        "72. What is the correct syntax to declare an array of 10 integers?",
+        "73. Which of these keywords is used to implement polymorphism?",
+        "74. Which operator is used for pointer arithmetic?",
+        "75. What is a copy constructor?",
+        "76. Which of the following is a valid way to initialize a structure?",
+        "77. What is the purpose of the 'volatile' keyword?",
+        "78. What is the output of 'cout << (5 < 3) << (3 < 5);'?",
+        "79. Which C++ feature supports data hiding?",
+        "80. How do you create a dynamic array in C++?",
+        "81. What is the correct syntax for a for-each loop?",
+        "82. Which of the following is a standard input stream in C++?",
+        "83. What is the result of 'cout << 1.0 / 0;'?",
+        "84. Which header file is required for using the 'string' class?",
+        "85. What is the output of 'cout << (2 + 3) * 5;'?",
+        "86. How can you declare an array of strings in C++?",
+        "87. What is the role of the 'const' keyword in function parameters?",
+        "88. Which function is used to convert a character to an integer?",
+        "89. What is an inline function?",
+        "90. How do you handle multiple exceptions in C++?",
+        "91. What is the output of 'cout << 5.0 / 2;'?",
+        "92. Which of the following is not a valid C++ comment?",
+        "93. What does the 'break' statement do in a loop?",
+        "94. Which operator is used to call a member function on an object?",
+        "95. What is a virtual function?",
+        "96. What is the result of 'cout << (10 == 10) ? \"True\" : \"False\";'?",
+        "97. How do you include a header file in C++?",
+        "98. What is the purpose of a forward declaration?",
+        "99. Which function is used to sort an array in C++?",
+        "100. What will be the output of 'cout << (0 || 1);'?"
+    };
+    std::string options[qSize][4] = {   //this is 2d array
+        {"A. int main()", "B. void main()", "C. main()", "D. float main()"},
+        {"A. #define", "B. const", "C. static", "D. final"},
+        {"A. 2.5", "B. 2", "C. 2.0", "D. 2.5f"},
+        {"A. malloc", "B. new", "C. alloc", "D. create"},
+        {"A. int", "B. bool", "C. string", "D. doubleint"},
+        {"A. 4 bytes", "B. 2 bytes", "C. 8 bytes", "D. 16 bytes"},
+        {"A. Function Overloading", "B. Function Overriding", "C. Polymorphism", "D. Encapsulation"},
+        {"A. class", "B. struct", "C. typedef", "D. define"},
+        {"A. Makes members private", "B. Makes members accessible outside the class", "C. Makes members protected", "D. Makes members read-only"},
+        {"A. private", "B. protected", "C. public", "D. friend"},
+        {"A. free()", "B. delete", "C. remove()", "D. erase()"},
+        {"A. extends", "B. inherits", "C. implements", "D. public"},
+        {"A. ->", "B. .", "C. :", "D. &"},
+        {"A. Constructor", "B. Destructor", "C. Operator Overload", "D. None"},
+        {"A. void", "B. int", "C. float", "D. main does not return"},
+        {"A. for", "B. while", "C. loop", "D. do-while"},
+        {"A. *", "B. /", "C. +", "D. ()"},
+        {"A. stdio.h", "B. iostream", "C. conio.h", "D. io.h"},
+        {"A. 10", "B. 5", "C. 2", "D. 20"},
+        {"A. vector.h", "B. vector", "C. stdvector.h", "D. iostream"},
+        {"A. define", "B. template", "C. class", "D. typename"},
+        {"A. 1stVariable", "B. 2nd-Variable", "C. Variable Name", "D. VariableName!"},
+        {"A. getline()", "B. read()", "C. get()", "D. input()"},
+        {"A. 4", "B. 8", "C. 16", "D. 32"},
+        {"A. *", "B. &", "C. ->", "D. ."},
+        {"A. ClassName()", "B. ClassName:", "C. ClassName{}", "D. ClassName[]"},
+        {"A. private", "B. public", "C. protected", "D. default"},
+        {"A. +", "B. -", "C. /", "D. all of the above"},
+        {"A. const", "B. static", "C. volatile", "D. extern"},
+        {"A. length()", "B. size()", "C. getSize()", "D. strlen()"},
+        {"A. int*", "B. *int", "C. &int", "D. int&"},
+        {"A. address", "B. pointer", "C. new", "D. int"},
+        {"A. malloc()", "B. alloc()", "C. new", "D. create()"},
+        {"A. return", "B. break", "C. exit", "D. terminate"},
+        {"A. for", "B. while", "C. do-while", "D. loop"},
+        {"A. map", "B. list", "C. set", "D. vector"},
+        {"A. private", "B. protected", "C. friend", "D. public"},
+        {"A. Destructor", "B. Constructor", "C. Member Function", "D. None"},
+        {"A. Defining multiple functions with the same name", "B. Creating multiple classes", "C. Creating multiple objects", "D. None"},
+        {"A. **", "B. !", "C. #", "D. %"},
+        {"A. try/catch", "B. if/else", "C. switch/case", "D. for"},
+        {"A. compare()", "B. matches()", "C. compareTo()", "D. equals()"},
+        {"A. Grants access to other classes", "B. Allows functions to be defined outside a class", "C. Allows data hiding", "D. None"},
+        {"A. .", "B. ->", "C. &", "D. *"},
+        {"A. %", "B. &", "C. /", "D. //"},
+        {"A. namespace", "B. scope", "C. class", "D. struct"},
+        {"A. exception", "B. error", "C. runtime_error", "D. std::exception"},
+        {"A. open()", "B. read()", "C. file_open()", "D. file()"},
+        {"A. Operator Overloading", "B. Function Overloading", "C. Both A and B", "D. None"},
+        {"A. stoi()", "B. stringToInt()", "C. int()", "D. toInt()"},
+        {"A. Referencing a value", "B. Making a function inline", "C. A function that cannot be overridden", "D. None"},
+        {"A. nullptr", "B. NULL", "C. 0", "D. All of the above"},
+        {"A. &", "B. *", "C. #", "D. @"},
+        {"A. 1", "B. 0", "C. 0.0", "D. Undefined"},
+        {"A. int*", "B. int[]", "C. int[10]", "D. int&"},
+        {"A. virtual", "B. override", "C. final", "D. static"},
+        {"A. +", "B. -", "C. *", "D. /"},
+        {"A. A function that returns a reference", "B. A function that is inlined", "C. A function that cannot be overridden", "D. None"},
+        {"A. ClassName()", "B. ~ClassName()", "C. ClassName~", "D. ClassName(){}"},
+        {"A. volatile", "B. mutable", "C. const", "D. extern"},
+        {"A. 1 1", "B. 1 0", "C. 0 1", "D. 0 0"},
+        {"A. Encapsulation", "B. Inheritance", "C. Polymorphism", "D. None"},
+        {"A. new int[10]", "B. int[10] new", "C. new int[10]() ", "D. int[10] = new"},
+        {"A. foreach", "B. forEach", "C. for each", "D. for_in"},
+        {"A. cin", "B. cout", "C. cerr", "D. clog"},
+        {"A. Undefined Behavior", "B. Runtime Error", "C. 0", "D. Infinity"},
+        {"A. <string>", "B. <String>", "C. <cstring>", "D. <string.h>"},
+        {"A. 25", "B. 15", "C. 20", "D. 30"},
+        {"A. string[]", "B. string[10]", "C. array<string>", "D. all of the above"},
+        {"A. To prevent modification", "B. To allow modification", "C. To declare a variable", "D. To define a class"},
+        {"A. atoi()", "B. itoa()", "C. to_int()", "D. parseInt()"},
+        {"A. A function that is expanded inline", "B. A function that cannot be overridden", "C. A function that is private", "D. None"},
+        {"A. try/catch", "B. if/else", "C. switch/case", "D. for"},
+        {"A. 2.5", "B. 2", "C. 2.0", "D. 2.5f"},
+        {"A. // Comment", "B. /* Comment */", "C. # Comment", "D. ** Comment **"},
+        {"A. Terminates the loop", "B. Continues to next iteration", "C. Exits the program", "D. None"},
+        {"A. .", "B. ->", "C. &", "D. *"},
+        {"A. A function that is declared in a base class and overridden in a derived class", "B. A function that is not defined", "C. A function that cannot be inherited", "D. None"},
+        {"A. True", "B. False", "C. Error", "D. None"},
+        {"A. #include <header>", "B. include <header>", "C. <header>", "D. #include header"},
+        {"A. To declare a function before its actual definition", "B. To include libraries", "C. To define a class", "D. None"},
+        {"A. sort()", "B. quicksort()", "C. sortArray()", "D. order()"},
+        {"A. 1", "B. 0", "C. Undefined", "D. Error"}
+    };
+    std::string answers[qSize] = {  //i'am keeping these strings its easy this way
+        "A", "B", "B", "B", "D", "A", "A", "A", "B", "B",
+        "B", "D", "A", "A", "B", "C", "D", "B", "A", "B",
+        "B", "D", "A", "A", "B", "C", "B", "A", "B", "D",
+        "A", "B", "C", "B", "D", "A", "C", "D", "A", "C",
+        "D", "B", "C", "A", "C", "B", "D", "A", "B", "D",
+        "A", "B", "C", "B", "D", "A", "C", "D", "A", "C",
+        "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+        "C", "A", "B", "C", "D", "A", "B", "C", "D", "C",
+        "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+        "C", "A", "B", "C", "D", "A", "B", "C", "D", "C"
+    };
+
+    std::cout << "\n***** Quiz Game in C++ *****\n";
+
+    for(int i =0;i<qSize;i++){
+        std::cout << "\n****************************\n";
+        std::cout << questions[i] << std::endl;
+        std::cout << "****************************\n";
+        for(int j =0;j<sizeof(options[0])/sizeof(options[0][0]);j++){
+            std::cout << options[i][j] << std::endl;
+        }
+        std::cout << "Enter your choice: ";
+        std::cin >> guesses;
+        for(int i =0;i<guesses.length();i++){   //converting lower case string into upper case string
+            guesses[i] = toupper(guesses[i]);
+        }
+        if(guesses == answers[i]){
+            correctAns++;
+            std::cout << "Correct!" << std::endl;
+        }else{
+            std::cout << "Wrong!" << std::endl;
+        }
+    }
+    std::cout << "\n****************************\n";
+    std::cout << "*          RESULT          *\n";
+    std::cout << "****************************\n";
+    std::cout << "correct: " << correctAns << "/" << qSize << " Score: " << std::setprecision(2) << std::fixed << (correctAns/(double) qSize)*100 << "%";
+
+    return 0;
+}

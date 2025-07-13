@@ -1,0 +1,6 @@
+﻿  Main.cpp
+C:\Users\sahil\OneDrive\Desktop\allVS_Files\C++_VS_2022\buildingNuralNetwork\NeuralNetwork.h(13,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\Users\sahil\OneDrive\Desktop\allVS_Files\C++_VS_2022\buildingNuralNetwork\Main.cpp(87,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  buildingNuralNetwork.vcxproj -> C:\Users\sahil\OneDrive\Desktop\allVS_Files\C++_VS_2022\buildingNuralNetwork\x64\Debug\buildingNuralNetwork.exe
